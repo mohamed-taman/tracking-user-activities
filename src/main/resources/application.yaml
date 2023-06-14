@@ -1,0 +1,14 @@
+Spring:
+  application:
+    name: Tracking User Activities
+kafka:
+  bootstrapAddress: "localhost:29092"
+  topic:
+    name: products
+    partitions: 2
+    replicas: 2
+
+tua:
+  business:
+    threshold: 20 # products
+    alert_time_window: 5 # seconds
