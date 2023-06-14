@@ -147,12 +147,12 @@ After starting the application, the configuration will be run automatically, and
 * In the Application log, you should see something like this:
 
 ```bash
-2023-06-14T11:37:56.967+02:00 ERROR 17608 --- [ntainer#0-0-C-1] c.siriusxi.tua.service.ProductListener   : ALERT!: Product 'Nokia' has been ordered more than threshold 20; 26 times within the last 5 seconds!
+2023-06-14T11:37:56.967+02:00  WARN 17608 --- [ntainer#0-0-C-1] c.siriusxi.tua.service.ProductListener   : ALERT!: Product 'Nokia' has been ordered more than threshold 20; 26 times within the last 5 seconds!
 2023-06-14T11:37:57.037+02:00  INFO 17608 --- [nio-8080-exec-9] c.s.t.api.controller.ProductController   : [ProductController]: add new product = Product[id=100, name=iPad, price=153.94]
 2023-06-14T11:37:57.037+02:00  INFO 17608 --- [nio-8080-exec-9] c.siriusxi.tua.service.ProductService    : [ProductService] send product ProductMessage[product=Product[id=100, name=iPad, price=153.94], action=add] to topic.
 2023-06-14T11:37:57.042+02:00  INFO 17608 --- [ad | producer-1] c.s.tua.infra.kafka.ProductProducer      : Successfully sent message = [ProductMessage[product=Product[id=100, name=iPad, price=153.94], action=add]] with offset = [610]
 2023-06-14T11:37:57.045+02:00  INFO 17608 --- [ntainer#0-0-C-1] c.siriusxi.tua.service.ProductListener   : [ProductListener] Get request from product topic [ProductMessage[product=Product[id=100, name=iPad, price=153.94], action=add]] with action add
-2023-06-14T11:37:57.045+02:00 ERROR 17608 --- [ntainer#0-0-C-1] c.siriusxi.tua.service.ProductListener   : ALERT!: Product 'iPad' has been ordered more than threshold 20; 23 times within the last 5 seconds!
+2023-06-14T11:37:57.045+02:00  WARN 17608 --- [ntainer#0-0-C-1] c.siriusxi.tua.service.ProductListener   : ALERT!: Product 'iPad' has been ordered more than threshold 20; 23 times within the last 5 seconds!
 ```
 
-Didn't you notice anything in the output log? Yes, there are alerts from the system that there are suspicious purchase activities on Nokia and iPad products within the last 5 seconds, so please check.
+Didn't you notice anything in the output log? Yes, there are alerts from the system that there are suspicious purchase activities on 'Nokia' and 'iPad' products within the last 5 seconds, so please check.

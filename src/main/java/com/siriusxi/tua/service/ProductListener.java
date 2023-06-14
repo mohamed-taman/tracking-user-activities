@@ -72,7 +72,7 @@ public class ProductListener {
     private void triggerAlert(String productName, OrderTracker orderTracker) {
         // Implement the logic to trigger the alert
         // For example, you can send an email using JavaMail or print an error message to the console
-        log.error("""
+        log.warn("""
                         ALERT!: Product '{}' has been ordered more than \
                         threshold {}; {} times within the last {} seconds!""",
                 productName,
