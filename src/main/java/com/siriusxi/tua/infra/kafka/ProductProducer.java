@@ -32,10 +32,12 @@ public class ProductProducer {
                 whenComplete((result, ex) -> {
                     if (ex == null) {
                         log.info("Successfully sent message = [{}] with offset = [{}]",
-                                message, result.getRecordMetadata().offset());
+                                message,
+                                result.getRecordMetadata().offset());
                     } else {
                         log.error("Unable to send message= [{}] due to : {}",
-                                message, ex.getMessage());
+                                message,
+                                ex.getMessage());
                     }
                 });
     }

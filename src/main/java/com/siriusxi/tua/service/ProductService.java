@@ -17,7 +17,7 @@ public class ProductService {
     }
 
     public void sendMessage(ProductMessage message) {
-        log.info("[ProductService] send product {} to topic.", message);
+        log.info("Send product {} to topic.", message);
         this.productProducer.send(message);
     }
 
