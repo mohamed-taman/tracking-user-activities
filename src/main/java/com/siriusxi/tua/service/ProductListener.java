@@ -50,7 +50,7 @@ public class ProductListener {
             orderTracker.incrementOrderCount();
 
             // Check if the order count exceeds the threshold within the time window
-            if (orderTracker.getOrderCount() > this.THRESHOLD && isWithinTimeWindow(orderTracker)) {
+            if (orderTracker.getOrderCount() >= this.THRESHOLD && isWithinTimeWindow(orderTracker)) {
                 // Trigger the alert (send an email or print an error message)
                 triggerAlert(prod.name(), orderTracker);
             }
